@@ -6,6 +6,8 @@ import com.example.demo.search.service.SearchService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.saml2.provider.service.authentication.Saml2AuthenticatedPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -28,10 +30,19 @@ public class SearchController {
         this.searchService = searchService;
     }
 
+    /**
+     * 初期表示想定
+     * @param principal 認証ユーザ情報の入れ物
+     * @param modelAndView モデルとviewの入れ物
+     * @return
+     */
     @GetMapping("/search")
-    public ModelAndView initPage(ModelAndView modelAndView) {
+    public ModelAndView initPage(@AuthenticationPrincipal Saml2AuthenticatedPrincipal principal, ModelAndView modelAndView) {
         SearchCondition condition = new SearchCondition();
         searchService.init(condition);
+        //Tokenから情報を取得
+        //Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
         //view, model
         modelAndView.setViewName("index");
         modelAndView.addObject("searchCondition", condition);
