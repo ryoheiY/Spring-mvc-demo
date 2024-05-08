@@ -1,0 +1,16 @@
+version: '3'
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:19.0.2
+    container_name: keycloak
+    tty: true
+    stdin_open: true
+    ports:
+      - "18080:8080" # 8080は被りやすいので別のポートに設定
+    volumes:
+      - ./data/keycloak:/opt/keycloak/data # DB情報等が格納されます
+    environment:
+      KEYCLOAK_ADMIN: admin # 管理ユーザーIDを設定
+      KEYCLOAK_ADMIN_PASSWORD: admin # 管理ユーザーのパスワードを設定
+    command:
+      - start-dev # 開発モードで起動
