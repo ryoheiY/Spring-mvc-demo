@@ -98,13 +98,20 @@
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity6</artifactId>
         </dependency>
+        <!-- SAML認証のためにはSpringbootの初期設定だけでなく、追加で必要な依存 -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-saml2-service-provider -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-saml2-service-provider</artifactId>
+            <version>6.2.4</version>
+        </dependency>
+        <!-- 以下依存関係は、本アプリケーションからSAMLクライアントを生成するための依存と思われる。なくても動いた。 -->
         <!-- https://mvnrepository.com/artifact/org.opensaml/opensaml-core -->
         <dependency>
             <groupId>org.opensaml</groupId>
             <artifactId>opensaml-core</artifactId>
             <version>4.3.2</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.opensaml/opensaml-saml-api -->
         <dependency>
             <groupId>org.opensaml</groupId>
@@ -117,15 +124,6 @@
             <artifactId>opensaml-saml-impl</artifactId>
             <version>4.3.2</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-saml2-service-provider -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-saml2-service-provider</artifactId>
-            <version>6.2.4</version>
-        </dependency>
-
-
     </dependencies>
 
     <build>
