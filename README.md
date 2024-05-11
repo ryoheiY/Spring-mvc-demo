@@ -7,8 +7,6 @@ https://www.a-frontier.jp/technology/security11/
 
 # pom.xml
 末尾にSAML関連の依存関係を追加。
-Centralリポジトリの最終アップデートは2021年だったため、他のリポジトリを明示的に追加。
-open-saml関連の依存はクライアントのメタデータ生成のために追加
 以下URLにアプリ起動してアクセスするとメタデータを取得できる。
 http://localhost:8080/saml2/service-provider-metadata/my-client
 

@@ -105,25 +105,25 @@
             <artifactId>spring-security-saml2-service-provider</artifactId>
             <version>6.2.4</version>
         </dependency>
-        <!-- 以下依存関係は、本アプリケーションからSAMLクライアントを生成するための依存と思われる。なくても動いた。 -->
+        <!-- 以下依存関係はなくても動いた。上記SAML2ServiceProviderに含まれていそう -->
         <!-- https://mvnrepository.com/artifact/org.opensaml/opensaml-core -->
-        <dependency>
-            <groupId>org.opensaml</groupId>
-            <artifactId>opensaml-core</artifactId>
-            <version>4.3.2</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.opensaml/opensaml-saml-api -->
-        <dependency>
-            <groupId>org.opensaml</groupId>
-            <artifactId>opensaml-saml-api</artifactId>
-            <version>4.3.2</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.opensaml/opensaml-saml-impl -->
-        <dependency>
-            <groupId>org.opensaml</groupId>
-            <artifactId>opensaml-saml-impl</artifactId>
-            <version>4.3.2</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.opensaml</groupId>-->
+        <!--            <artifactId>opensaml-core</artifactId>-->
+        <!--            <version>4.3.2</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.opensaml/opensaml-saml-api &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.opensaml</groupId>-->
+        <!--            <artifactId>opensaml-saml-api</artifactId>-->
+        <!--            <version>4.3.2</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.opensaml/opensaml-saml-impl &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.opensaml</groupId>-->
+        <!--            <artifactId>opensaml-saml-impl</artifactId>-->
+        <!--            <version>4.3.2</version>-->
+        <!--        </dependency>-->
     </dependencies>
 
     <build>
